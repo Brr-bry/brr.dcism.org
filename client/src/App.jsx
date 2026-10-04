@@ -1,24 +1,63 @@
-
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { LoadingScreen } from './components/LoadingScreen';
 import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { About } from './components/About';
+import { Skills } from './components/Skills';
+
+import { Works } from './components/Works';
 
 import "./index.css";
+
 function App() {
-  
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isDark, setIsDark] = useState(false);
 
-  return (
-    <>
-      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true) } />}{" "}
+    const [isLoaded, setIsLoaded] = useState(false);
 
-      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded? "opacity-100" : "opacity-0"} bg-bg-dark text-primary`} >
-        <Navbar isDark={isDark} setIsDark={setIsDark}/>
-      </div>
-    </>
-  )
+    const [isDark, setIsDark] = useState(() => {
+        return localStorage.getItem("darkMode") === "true";
+    });
+
+    // Save dark mode whenever it changes
+    useEffect(() => {
+        localStorage.setItem("darkMode", isDark);
+
+        document.documentElement.classList.toggle("dark", isDark);
+    }, [isDark]);
+
+    return (
+        <>
+            {!isLoaded && (
+                <LoadingScreen
+                    onComplete={() => setIsLoaded(true)}
+                />
+            )}
+
+            <div
+                className={`
+                    min-h-screen
+                    transition-opacity
+                    duration-700
+                    ${isLoaded ? "opacity-100" : "opacity-0"}
+                    bg-bg-dark
+                    text-text
+                `}
+            >
+                <Navbar
+
+                    isDark={isDark}
+                    setIsDark={setIsDark}
+                />
+
+                <Hero   isLoaded={isLoaded} />
+                <About id='about'/>
+
+                <Skills id='skills'/>
+
+                <Works id='works'/>
+            </div>
+        </>
+    );
 }
 
-export default App
+export default App;

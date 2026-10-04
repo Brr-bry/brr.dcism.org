@@ -74,10 +74,12 @@ body {
   font-family: var(--font-plex);
   background-color: var(--bg);
   color: var(--text);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
 }
 
 @layer utilities {
-
+  
   @keyframes blink {
     0%{
       opacity: 1;
@@ -105,4 +107,79 @@ body {
   .animate-loading-bar {
     animation: loading 0.8s ease infinite;
   }
+
+  @keyframes moveDown {
+    0% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(30px);
+    }
+  }
+
+  @keyframes moveUp {
+    0% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(-30px);
+    }
+  }
+
+  .animate-move-down {
+    animation: moveDown 50s linear infinite alternate;
+  }
+
+  .animate-move-up {
+    animation: moveUp 50s linear infinite alternate;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 999px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-button {
+    display: none;
 }
