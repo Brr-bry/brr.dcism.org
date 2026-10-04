@@ -1,14 +1,23 @@
-import './App.css'
 
+import { useState } from 'react';
+
+import { LoadingScreen } from './components/LoadingScreen';
+import { Navbar } from './components/Navbar';
+
+import "./index.css";
 function App() {
   
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        John Bryan Ponce
-      </h1>
-    </div>
+    <>
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true) } />}{" "}
+
+      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded? "opacity-100" : "opacity-0"} bg-bg-dark text-primary`} >
+        <Navbar isDark={isDark} setIsDark={setIsDark}/>
+      </div>
+    </>
   )
 }
 
