@@ -1,15 +1,31 @@
 {
   
   "name": "brr-portfolio",
+  
   "version": "1.0.0",
+  
   "private": true,
+  
   "scripts": {
-    "install-client": "npm install --prefix client",
-    "build": "npm run build --prefix client",
-    "start": "node server.js"
+  
+    
+  "install-client": "npm install --prefix client",
+  
+    
+  "build": "npm run build --prefix client",
+  
+    
+  "start": "node server.js"
+  
   },
-
+  
   "dependencies": {
-    "create-vite": "^9.2.1"
+  
+    
+  "create-vite": "^9.2.1",
+  
+    
+  "dotenv": "^18.0.5"
+  
   }
 }

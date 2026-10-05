@@ -1,9 +1,6 @@
-const GITHUB_USERNAME = "Brr-bry";
 
 export async function getRepositories() {
-    const response = await fetch(
-        `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=created&direction=desc&per_page=100`
-    );
+    const response = await fetch("/api/github/repos");
 
     if (!response.ok) {
         throw new Error("Failed to fetch GitHub repositories");
