@@ -3,7 +3,7 @@
 Personal portfolio website built with React, Vite, Tailwind CSS, and Node.js.
 
 **Live Website:** [brr.dcism.org](https://brr.dcism.org/?utm_source=chatgpt.com)
-**Repository:** [GitHub Repository](https://github.com/Brr-bry/brr.dcism.org?utm_source=chatgpt.com)
+**Repository:** [GitHub Repository](https://github.com/Brr-bry/brr.dcism.org)
 
 ## Tech Stack
 
