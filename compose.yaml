@@ -1,0 +1,11 @@
+services:
+  portfolio:
+    build: .
+    container_name: brr-portfolio
+    ports:
+      - "20261:20261"
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    restart: unless-stopped
+
+  
