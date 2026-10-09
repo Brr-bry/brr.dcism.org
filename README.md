@@ -2,7 +2,7 @@
 
 Personal portfolio website built with React, Vite, Tailwind CSS, and Node.js.
 
-**Live Website:** [brr.dcism.org](https://brr.dcism.org/)
+**Live Website:** [brr-portfolio.vercel.app](https://brr-portfolio.vercel.app/)
 **Repository:** [GitHub Repository](https://github.com/Brr-bry/brr.dcism.org)
 
 ## Tech Stack
